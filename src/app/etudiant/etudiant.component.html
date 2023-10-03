@@ -1,41 +1,23 @@
-<h2>Halim Choukani</h2>
-{{ etudiant }}!
-<br>
-<h2><strong>Name :</strong> {{etudiant.name}}</h2>
-<div><strong>Id : </strong>{{etudiant.id}}</div>
-<div><strong>Name : </strong>{{etudiant.name}}</div>
-<div><strong>LastName : </strong>{{etudiant.lastname}}</div>
-<br>
-<table *ngFor="let etudiants of etudiants_liste">
-    <tr>
-        <td><strong>Id : </strong></td>
-        <td>{{etudiants.id}}</td>
-    </tr>
-    <tr>
-        <td><strong>Name : </strong></td>
-        <td>{{etudiants.name | uppercase}}</td>
-    </tr>
-    <tr>
-        <td><strong>LastName : </strong></td>
-        <td>{{etudiants.lastname}}</td>
-    </tr>
-    <tr>
-        <td><strong>Average : </strong></td>
-        <td>{{etudiants.average}}</td>
-    </tr>
-    <tr>
-        <td><strong>Date de naissance : </strong></td>
-        <td>{{etudiants.dateNaissance | date}}</td>
-    </tr>
-    <tr>
-        <td><strong>Payée : </strong></td>
-        <td>{{etudiants.paye | currency}}</td>
-    </tr>
-</table>
-<br>
-<div><strong>Id : </strong>{{etudiant.id}}</div>
-<div><strong>Name : </strong><input [(ngModel)] = "etudiant.name" placeholder="Name"></div>
-<div><strong>LastName: </strong><input [(ngModel)] = "etudiant.lastname" placeholder="LastName"></div>
-<div><strong>Average : </strong><input [(ngModel)] = "etudiant.average" placeholder="Average"></div>
-
-
+<h2>Liste Des Etudiant</h2>
+<br />
+<ul class="etudiants">
+  <li
+    [class.selected]="etudiant === selectedEtudiant"
+    *ngFor="let etudiant of etudiants_liste"
+    (click)="onSelect(etudiant)"
+  >
+    <span class="badge">{{ etudiant.id }}</span> -{{ etudiant.name }}
+  </li>
+</ul>
+<div *ngIf="selectedEtudiant">
+  <h2>Info de {{ selectedEtudiant.name | uppercase }}</h2>
+  <div>
+    <span>id : </span>{{ selectedEtudiant.id }}
+    <div>
+      <label for=""
+        ><strong>name</strong>
+        <input placeholder="Name" [(ngModel)]="selectedEtudiant.name" />
+      </label>
+    </div>
+  </div>
+</div>
