@@ -1,9 +1,13 @@
 import { Etudiant } from './Etudiant';
 export const Etudiants: Etudiant[] = [
-  { id: 1, name: 'Halim Choukani' },
-  { id: 2, name: 'Halim Choukani' },
-  { id: 3, name: 'Halim Choukani' },
-  { id: 4, name: 'Halim Choukani' },
-  { id: 5, name: 'Halim Choukani' },
-  { id: 6, name: 'Halim Choukani' },
+  { id: 1, name: 'Asma' },
+  { id: 2, name: 'Oumaima' },
+  { id: 3, name: 'Raouf' },
+  { id: 4, name: 'Ibrahim' },
+  { id: 5, name: 'Nour' },
+  { id: 6, name: 'Rihem' },
+  { id: 7, name: 'Dyama' },
+  { id: 8, name: 'Dr IQ' },
+  { id: 9, name: 'Howa' },
+  { id: 10, name: 'Hiya' },
 ];
