@@ -9,15 +9,46 @@
     <span class="badge">{{ etudiant.id }}</span> -{{ etudiant.name }}
   </li>
 </ul>
-<h2>Info de Halim Choukani</h2>
+
 <div *ngIf="selectedEtudiant">
-  <div>
-    <span>id : </span>{{ selectedEtudiant.id }}
-    <div>
-      <label for=""
-        ><strong>name</strong>
-        <input placeholder="Name" [(ngModel)]="selectedEtudiant.name" />
-      </label>
+  <img [src]="selectedEtudiant.img" alt="">
+  <h2>Info de {{selectedEtudiant.name}} {{selectedEtudiant.lastname}}</h2>
+  <div class="info-container">
+    <div class="card" (mouseover)="idClicked = true" (mouseleave)="idClicked = false">
+      <div *ngIf="!idClicked" class="textDiv">
+        <strong >ID</strong>
+      </div>
+      <p *ngIf="idClicked">{{selectedEtudiant.id}}</p>
+    </div>
+    <div class="card" (mouseover)="nameClicked = true" (mouseleave)="nameClicked = false">
+      <div *ngIf="!nameClicked" class="textDiv">
+        <strong >Name</strong>
+      </div>
+      <p *ngIf="nameClicked">{{selectedEtudiant.name}}</p>
+    </div>
+    <div class="card" (mouseover)="lnameClicked = true" (mouseleave)="lnameClicked = false">
+      <div *ngIf="!lnameClicked" class="textDiv">
+        <strong >Last Name</strong>
+      </div>
+      <p *ngIf="lnameClicked">{{selectedEtudiant.lastname}}</p>
+    </div>
+    <div class="card" (mouseover)="dateClicked = true" (mouseleave)="dateClicked = false">
+      <div *ngIf="!dateClicked" class="textDiv">
+        <strong >Birth Date</strong>
+      </div>
+      <p *ngIf="dateClicked">{{selectedEtudiant.dateNaissance | date}}</p>
+    </div>
+    <div class="card" (mouseover)="avgClicked = true" (mouseleave)="avgClicked = false">
+      <div *ngIf="!avgClicked" class="textDiv">
+        <strong >Average</strong>
+      </div>
+      <p *ngIf="avgClicked">{{selectedEtudiant.average}}</p>
+    </div>
+    <div class="card" (mouseover)="payClicked = true" (mouseleave)="payClicked = false">
+      <div *ngIf="!payClicked" class="textDiv">
+        <strong >Payée</strong>
+      </div>
+      <p *ngIf="payClicked">{{selectedEtudiant.paye |currency}}</p>
     </div>
   </div>
 </div>

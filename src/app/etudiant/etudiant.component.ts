@@ -8,6 +8,20 @@ import { Etudiants } from './Etudiant-Liste';
 })
 export class EtudiantComponent {
   // etudiant = "Halim Choukani"
+  // classChange(){
+  //   let card = document.getElementsByClassName('card')[0];
+  //   card.classList.add("shakeActive");
+  // }
+  // classRestor(){
+  //   let card = document.getElementsByClassName('card')[0];
+  //   card.classList.remove("shakeActive");
+  // }
+  idClicked = false;
+  nameClicked = false;
+  lnameClicked = false;
+  dateClicked = false;
+  avgClicked = false;
+  payClicked = false;
   etudiants_liste = Etudiants;
   selectedEtudiant!: Etudiant;
   constructor() {}

@@ -43,3 +43,81 @@
   margin-right: 0.8em;
   border-radius: 4px 0 0 4px;
 }
+.info-container{
+  display: flex;
+  cursor: pointer;
+}
+
+.card{
+  display: inline-block;
+  background-color: #405061;
+  margin: 2px;
+  width: 200px;
+  height: 200px;
+  text-align: center;
+  color: antiquewhite;
+  border-radius: 5%;
+  overflow: hidden;
+}
+.shakeActive{
+  animation: rotationShake .15s infinite;
+}
+
+
+img{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+
+.card .textDiv{
+  width: 100%;
+  background: #000;
+  height: 100%;
+  position: relative;
+  top:0%;
+  animation: text-title-anim .2s ease-in-out;
+  border-radius: 5%;
+
+}
+.card strong{
+  position: relative;
+  top:50%;
+}
+.card p{
+  position: relative;
+  animation: text-anim .2s ease-in-out;
+  top: 40%;
+}
+@keyframes text-anim {
+  from{
+    top: -10%;
+  }
+  to{
+    top: 40%;
+  }
+}
+
+@keyframes text-title-anim {
+  from{
+    top: 110%;
+  }
+  to{
+    top: 50%;
+  }
+}
+@keyframes rotationShake{
+  0%{
+    transform: rotate(1deg);
+  }
+  25%{
+    transform: rotate(-1deg);
+  }
+  75%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(1deg);
+  }
+}

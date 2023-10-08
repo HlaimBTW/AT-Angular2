@@ -1,8 +1,9 @@
 export interface Etudiant {
   id: number;
   name: string;
-  // lastname:string,
-  // average:number,
-  // dateNaissance:Date,
-  // paye : number
+  lastname:string;
+  average:number;
+  dateNaissance:Date;
+  paye : number;
+  img:string
 }
